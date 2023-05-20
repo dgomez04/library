@@ -1,0 +1,17 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "A Library done as a part of The Odin Project's JavaScript course, for the Full-Stack JavaScript Path.",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
