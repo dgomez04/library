@@ -1,0 +1,74 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    box-shadow: -1px 4px 7px -1px rgba(167,164,164,0.61);
+}
+
+h1 {
+    margin-left: 5%;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+button {
+    background-color: #eeeeee;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 400;
+    width: 115px;
+    height: 50px;
+}
+
+header > button {
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+button:hover {
+    background-color: #e5e4e4;
+}
+
+/* popup classes*/
+
+.modalcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    gap: 25px;
+    background-color: white;
+    width: 200px;
+    padding: 30px 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+
+.modal > input {
+    font-size: 16px;
+    padding: 2px 4px;
+    width: 175px;
+    height: 40px;
+}
+
+.show {
+    transition: opacity 0.2s, visibility 0.2s;
+    opacity: 1;
+}

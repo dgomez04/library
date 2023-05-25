@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="library.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
-    
+    <header>
+        <h1 id="logo">library project.</h1>
+        <button id="open" type="button">add book</button>
+    </header>
+
+
+    <div class="modalcontainer show" id="modalcontainer">
+        <h1>test</h1>
+        <input placeholder="Book" type="text">
+        <input placeholder="Author" type="text">
+        <input placeholder="Pages" type="number">
+        <button id="close" type="button">submit</button>
+    </div>
 </body>
 </html>
