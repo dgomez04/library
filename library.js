@@ -13,6 +13,7 @@ const pagesInput = document.getElementById('pages');
 // DOM object for bookcontainer
 const bookContainer = document.getElementById('bookcontainer');
 let removeSelector = document.querySelectorAll('.remove');
+let readSelector = document.querySelectorAll('.readStatus');
 
 // array to store books
 const myLibrary = [];
@@ -22,8 +23,6 @@ function Book(book, author, pages) {
   this.book = book;
   this.author = author;
   this.pages = pages;
-  // eslint-disable-next-line no-undef
-  isRead = false;
 }
 
 // function to add book to array
@@ -46,11 +45,24 @@ function showBooks() {
   myLibrary.forEach((element) => {
     const div = document.createElement('div');
     div.classList.add('book');
+
+    let readClass;
+    let readText;
+    // eslint-disable-next-line no-constant-condition
+    if (element.isRead === true) {
+      readClass = 'read';
+      readText = 'read';
+    } else {
+      readClass = 'not-read';
+      readText = 'not read';
+    }
+
     div.innerHTML = `
-    <h1>${element.book}</h1>
+    <h2>${element.book}</h2>
     <h3>${element.author}</h3>
     <h4>${element.pages}</h4>
-    <button data-key=${count} class="remove btn-red"> remove </button>
+    <button data-key=${count} class="remove"> remove </button>
+    <button data-key=${count} class="readStatus ${readClass}"> ${readText} </button>
     `;
     // eslint-disable-next-line no-plusplus
     count++;
@@ -59,11 +71,31 @@ function showBooks() {
 
   // eslint-disable-next-line prefer-const
   removeSelector = document.querySelectorAll('.remove');
+  readSelector = document.querySelectorAll('.readStatus');
 
   removeSelector.forEach((button) => {
     button.addEventListener('click', () => {
       myLibrary.splice(button.getAttribute('data-key'), 1);
       showBooks();
+    });
+  });
+
+  readSelector.forEach((button) => {
+    button.addEventListener('click', () => {
+      console.log();
+      if (button.classList.contains('not-read')) {
+        button.classList.remove('not-read');
+        button.classList.add('read');
+        // eslint-disable-next-line no-param-reassign
+        button.textContent = 'read';
+        myLibrary[(button.getAttribute('data-key'))].isRead = true;
+      } else {
+        button.classList.remove('read');
+        button.classList.add('not-read');
+        // eslint-disable-next-line no-param-reassign
+        button.textContent = 'not read';
+        myLibrary[(button.getAttribute('data-key'))].isRead = false;
+      }
     });
   });
 }
@@ -79,5 +111,3 @@ submit.addEventListener('click', () => {
   addBookToLibrary();
   showBooks();
 });
-
-// TO DO: FIND A WAY TO REMOVE BOOKS

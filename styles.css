@@ -63,9 +63,21 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* remove button */
-.btn-red {
+/* not read button */
+.not-read {
     background-color: #ea9999;
+}
+
+.not-read:hover {
+    background-color: #e06666;
+}
+
+.read {
+    background-color: #b6d7a8;
+}
+
+.read:hover {
+    background-color: #93c47d;
 }
 
 /* popup classes*/
