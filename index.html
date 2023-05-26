@@ -17,13 +17,16 @@
         <button id="open" type="button">add book</button>
     </header>
 
+    <div class="bookcontainer">
+        
+    </div>
 
-    <div class="modalcontainer show" id="modalcontainer">
+    <div class="modalcontainer" id="modalcontainer">
         <h1>test</h1>
-        <input placeholder="Book" type="text">
-        <input placeholder="Author" type="text">
-        <input placeholder="Pages" type="number">
-        <button id="close" type="button">submit</button>
+        <input id="book" placeholder="Book" type="text" maxlength="24" required>
+        <input id="author" placeholder="Author" type="text" maxlength="24" required>
+        <input id="pages" placeholder="Pages" min="1" type="number" required> 
+        <button id="submit" type="submit">submit</button>
     </div>
 </body>
 </html>

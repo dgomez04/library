@@ -57,11 +57,12 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     border-radius: 4px;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.2s, visibility 0.2s;
 }
 
 
-.modal > input {
+.modalcontainer > input {
     font-size: 16px;
     padding: 2px 4px;
     width: 175px;
@@ -70,5 +71,6 @@ button:hover {
 
 .show {
     transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: all;
     opacity: 1;
 }
