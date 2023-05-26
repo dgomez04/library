@@ -41,6 +41,33 @@ button:hover {
     background-color: #e5e4e4;
 }
 
+/* book container */
+.bookcontainer {
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* remove button */
+.btn-red {
+    background-color: #ea9999;
+}
+
 /* popup classes*/
 
 .modalcontainer {

@@ -10,6 +10,9 @@ const bookInput = document.getElementById('book');
 const authorInput = document.getElementById('author');
 const pagesInput = document.getElementById('pages');
 
+// DOM object for bookcontainer
+const bookContainer = document.getElementById('bookcontainer');
+
 // array to store books
 const myLibrary = [];
 
@@ -33,6 +36,28 @@ function addBookToLibrary() {
   pagesInput.value = '';
 }
 
+// for each element in the array
+
+function showBooks() {
+  let count = 0;
+  bookContainer.innerHTML = '';
+
+  myLibrary.forEach((element) => {
+    const div = document.createElement('div');
+    div.setAttribute('data-key', count);
+    // eslint-disable-next-line no-plusplus
+    count++;
+    div.classList.add('book');
+    div.innerHTML = `
+    <h1>${element.book}</h1>
+    <h3>${element.author}</h3>
+    <h4>${element.pages}</h4>
+    <button class="btn-red"> remove </button
+    `;
+    bookContainer.appendChild(div);
+  });
+}
+
 // eventListeners for open & close buttons
 
 open.addEventListener('click', () => {
@@ -42,4 +67,5 @@ open.addEventListener('click', () => {
 submit.addEventListener('click', () => {
   modalcontainer.classList.remove('show');
   addBookToLibrary();
+  showBooks();
 });
