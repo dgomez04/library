@@ -12,6 +12,7 @@ const pagesInput = document.getElementById('pages');
 
 // DOM object for bookcontainer
 const bookContainer = document.getElementById('bookcontainer');
+let removeSelector = document.querySelectorAll('.remove');
 
 // array to store books
 const myLibrary = [];
@@ -44,17 +45,26 @@ function showBooks() {
 
   myLibrary.forEach((element) => {
     const div = document.createElement('div');
-    div.setAttribute('data-key', count);
-    // eslint-disable-next-line no-plusplus
-    count++;
     div.classList.add('book');
     div.innerHTML = `
     <h1>${element.book}</h1>
     <h3>${element.author}</h3>
     <h4>${element.pages}</h4>
-    <button class="btn-red"> remove </button
+    <button data-key=${count} class="remove btn-red"> remove </button>
     `;
+    // eslint-disable-next-line no-plusplus
+    count++;
     bookContainer.appendChild(div);
+  });
+
+  // eslint-disable-next-line prefer-const
+  removeSelector = document.querySelectorAll('.remove');
+
+  removeSelector.forEach((button) => {
+    button.addEventListener('click', () => {
+      myLibrary.splice(button.getAttribute('data-key'), 1);
+      showBooks();
+    });
   });
 }
 
@@ -69,3 +79,5 @@ submit.addEventListener('click', () => {
   addBookToLibrary();
   showBooks();
 });
+
+// TO DO: FIND A WAY TO REMOVE BOOKS
